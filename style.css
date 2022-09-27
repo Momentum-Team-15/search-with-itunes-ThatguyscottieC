@@ -1,0 +1,129 @@
+body {
+    background-color: rgba(1, 22, 39)
+}
+
+#searchResults {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+ul {
+    margin: 5%;
+    /* width: 450px; */
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 25px 0;
+    border-radius: 25px;
+    border: 0.1px solid #099fff;
+    background-color: #18181b;
+    box-shadow: 0 4px 8px 0 #00ffff, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+li {
+    margin: auto;
+    color: aliceblue;
+    font-size: larger;
+    cursor: pointer;
+}
+
+li:after {
+display: block;
+content: '';
+border-bottom: solid 1px #00ffff;
+padding-bottom: 1%;
+transform: scaleX(0);
+transition: transform 300ms ease-in-out;
+}
+li:hover:after {
+    transform: scaleX(1);
+}
+
+/* .nowplaying {
+    display: flex;
+
+} */
+
+.artistsearch {
+    display: flex;
+    justify-content: center;
+}
+
+#searchbar {
+    text-decoration-color: #18181b;
+    width: 500px;
+    height: 25px;
+    /* color: rgb(0, 0, 0); */
+    height: 31px;
+    /* margin: 5%; */
+    /* width: 450px; */
+    /* padding: 25px 0; */
+    border-radius: 5px;
+    border: 0.1px solid #099fff;
+    /* background-color: #18181b; */
+    box-shadow: 0 4px 8px 0 #00ffff, 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.music-container {
+    background-color: #00ffff;
+    border-radius: 15px;
+    box-shadow:0 4px 8px 0 #00ffff, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    padding: 20px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
+}
+.img-container {
+    position: relative;
+    width: 100px;
+}
+
+.img-container ::after {
+    content:'' ;
+    background-color: #00ffff;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-container img {
+    width: inherit;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button #search-btn {
+    color: aliceblue;
+    height: 35px;
+    /* margin: 5%; */
+    /* width: 450px; */
+    /* padding: 25px 0; */
+    border-radius: 5px;
+    border: 0.1px solid #099fff;
+    background-color: #18181b;
+    box-shadow: 0 4px 8px 0 #00ffff, 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
