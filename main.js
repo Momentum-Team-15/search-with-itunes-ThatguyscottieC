@@ -24,12 +24,16 @@ function newsearch(URL) {
     .then(function (response) {
       return response.json();
     })
+    .then(function (artistData) {
+      makeResults(artistData.results);
+      if (artistData.results.length === 0) {
+        alert("Nah Cuh");
+      }
 
-    //   .then(function (data) {
-    //     console.log(data);
-    //   });
-    .then(function (artistdata) {
-      makeResults(artistdata.results);
+      //   .then(function (data) {
+      //     console.log(data);
+      //   });
+
       //   console.log(`${artistdata.results} by ${artistdata.results.artistName}`);
       //   console.log(artistdata);
     });
