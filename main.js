@@ -6,16 +6,16 @@ let form = document.querySelector("#music");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   let jam = input.value;
-  let URL = `https://proxy-itunes-api.glitch.me/search?term=${jam}&limit=10`;
+  const URL = `https://proxy-itunes-api.glitch.me/search?term=${jam}&limit=12`;
   newsearch(URL);
   input.value = "";
-  console.log("event ran");
-  console.log(jam);
-  console.log(URL);
+  //   console.log("event ran");
+  //   console.log(jam);
+  //   console.log(URL);
 });
 
 function newsearch(URL) {
-  console.log("test");
+  //   console.log("test");
   fetch(URL, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
@@ -30,8 +30,8 @@ function newsearch(URL) {
     //   });
     .then(function (artistdata) {
       makeResults(artistdata.results);
-      console.log(`${artistdata.results} by ${artistdata.results.artistName}`);
-      console.log(artistdata);
+      //   console.log(`${artistdata.results} by ${artistdata.results.artistName}`);
+      //   console.log(artistdata);
     });
 }
 
@@ -42,16 +42,26 @@ function makeResults(musicArray) {
   for (let music of musicArray) {
     let resultsDiv = document.createElement("div");
     let albumcover = document.createElement("img");
+    let background = document.createElement("img");
     let songTitle = document.createElement("p");
     let ArtName = document.createElement("h1");
+    let playButton = document.createElement("audio");
+
+    resultsDiv.classList.add("test");
+    background.classList.add("backgroundimg");
 
     albumcover.src = `${music.artworkUrl100}`;
+    background.src = `${music.artworkUrl100}`;
     ArtName.innerText = `${music.artistName}`;
     songTitle.innerText = `${music.trackName}`;
+    playButton.src = `${music.previewUrl}`;
+    playButton.controls = true;
 
     resultsDiv.appendChild(albumcover);
+    resultsDiv.appendChild(background);
     resultsDiv.appendChild(ArtName);
     resultsDiv.appendChild(songTitle);
+    resultsDiv.appendChild(playButton);
     searchResults.appendChild(resultsDiv);
   }
 }
