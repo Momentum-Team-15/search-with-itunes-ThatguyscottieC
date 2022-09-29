@@ -1,17 +1,13 @@
-// let URL = `https://proxy-itunes-api.glitch.me/search?term=${jam}`;
-
 let input = document.querySelector("#searchbar");
 let form = document.querySelector("#music");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   let jam = input.value;
-  const URL = `https://proxy-itunes-api.glitch.me/search?term=${jam}&limit=12`;
+  const URL = `https://proxy-itunes-api.glitch.me/search?term=${jam}&entity=song&limit=12
+  `;
   newsearch(URL);
   input.value = "";
-  //   console.log("event ran");
-  //   console.log(jam);
-  //   console.log(URL);
 });
 
 function newsearch(URL) {
@@ -29,13 +25,6 @@ function newsearch(URL) {
       if (artistData.results.length === 0) {
         alert("Nah Cuh");
       }
-
-      //   .then(function (data) {
-      //     console.log(data);
-      //   });
-
-      //   console.log(`${artistdata.results} by ${artistdata.results.artistName}`);
-      //   console.log(artistdata);
     });
 }
 
@@ -53,6 +42,9 @@ function makeResults(musicArray) {
 
     resultsDiv.classList.add("test");
     background.classList.add("backgroundimg");
+    albumcover.classList.add("coverAlbum");
+    ArtName.classList.add("ArtName");
+    songTitle.classList.add("songTitle");
 
     albumcover.src = `${music.artworkUrl100}`;
     background.src = `${music.artworkUrl100}`;
@@ -69,12 +61,3 @@ function makeResults(musicArray) {
     searchResults.appendChild(resultsDiv);
   }
 }
-
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   let jam = input.value;
-//   console.log("event ran");
-//   console.log(jam);
-// });
-
-//

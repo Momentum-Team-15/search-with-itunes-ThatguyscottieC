@@ -1,6 +1,7 @@
 body {
         background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
         background-size: 400% 400%;
+        /* background-size: cover; */
         animation: gradient 60s ease infinite;
         height: 100vh;
     }
@@ -16,29 +17,23 @@ body {
             background-position: 0% 50%;
         }
     }
-    
-
 #searchResults {
     margin: 4%;
     padding: 10px 10px;
-    /* border: solid green; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 .test {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     margin: 30px;
     padding:0px 5px;
     background-color: rgba(0, 0, 0, 0.50);
     border-radius: 15px;
     box-shadow:0 4px 8px 0 #23a6d5, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /* display: flex; */
-    /* padding: 20px 30px; */
     position: relative;
-    /* margin: 100px 0; */
     z-index: 10;
 }
 
@@ -50,7 +45,6 @@ p {
 
 ul {
     margin: 5%;
-    /* width: 450px; */
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -79,11 +73,6 @@ li:hover:after {
     transform: scaleX(1);
 }
 
-/* .nowplaying {
-    display: flex;
-
-} */
-
 .artistsearch {
     display: flex;
     justify-content: center;
@@ -93,34 +82,16 @@ li:hover:after {
     text-decoration-color: #18181b;
     width: 500px;
     height: 25px;
-    /* color: rgb(0, 0, 0); */
     height: 31px;
-    /* margin: 5%; */
-    /* width: 450px; */
-    /* padding: 25px 0; */
     border-radius: 5px;
     border: 0.1px solid #099fff;
-    /* background-color: #18181b; */
     box-shadow: 0 4px 8px 0 #e73c7e, 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
-
-/* .music-container {
-    background-color: rgba(0, 0, 0, 0.50);
-    border-radius: 15px;
-    box-shadow:0 4px 8px 0 #23a6d5, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display: flex;
-    padding: 20px 30px;
-    position: relative;
-    margin: 100px 0;
-    z-index: 10;
-} */
 
 #search-btn {
     color: aliceblue;
     height: 35px;
-    /* margin: 5%; */
     width: 100px;
-    /* padding: 25px 0; */
     border-radius: 5px;
     border: 0.1px solid #099fff;
     background-color: #18181b;
@@ -136,6 +107,13 @@ li:hover:after {
         height: 100%;
         background-position: 50% 50%;
         background-size: cover;
-        filter: blur(20px) brightness(130%);
-        opacity: 0.2;
+        filter: blur(5px) brightness(150%);
+        opacity: 0.1;
+}
+.coverAlbum {
+    padding: 10px 50px;
+    margin: 5%;
+}
+.ArtName {
+    margin: 5%;
 }
